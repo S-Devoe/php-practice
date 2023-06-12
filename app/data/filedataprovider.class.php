@@ -1,16 +1,9 @@
-<?php 
-require('glossaryterm.class.php');
-
-class FileDataProvider{
-
-
-    function __construct($file_path){
-        $this->file_path = $file_path;
-    }
+<?php
+class FileDataProvider extends DataProvider {
 
     private function get_data() {
         // $fName = CONFIG['data_file'];
-        $fName = $this -> file_path;
+        $fName = $this -> source;
         $json = '';
 
         if(!file_exists($fName)) {
@@ -26,7 +19,7 @@ class FileDataProvider{
 
     private function set_data($arr){
         // $fName = CONFIG['data_file'];
-        $fName = $this -> file_path;
+        $fName = $this ->source;
 
         $json = json_encode($arr);
 

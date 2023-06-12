@@ -8,5 +8,4 @@ require('app/app.php');
 
 redirect('login.php');
 
-
  ?>
