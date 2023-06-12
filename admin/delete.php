@@ -19,7 +19,7 @@ if(is_get()){
         die();
     }
 
-    $term = $data->get_term($key);
+    $term = Data::get_term($key);
 
     if($term === false){
         view('not_found','');
@@ -38,7 +38,7 @@ if(is_post()){
     if(empty($term) ){
         echo 'Fill all fields';
     } else{
-        $data->delete_term($term);
+        Data::delete_term($term);
         redirect('index.php');
     }
 }

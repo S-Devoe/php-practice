@@ -4,7 +4,6 @@ require('../app/app.php');
 
 ensure_user_is_authenticated();
 
-$data = new FileDataProvider(CONFIG['data_file']);
 
 if(is_post()){
     $term = sanitize($_POST['term']);
@@ -13,7 +12,7 @@ if(is_post()){
     if(empty($term) || empty($definition)){
         echo 'Fill all fields';
     } else{
-        $data->add_term($term, $definition);
+        Data::add_term($term, $definition);
         redirect('index.php');
     }
 }
@@ -23,6 +22,6 @@ $view_bag = [
     'heading' => 'Create Term',
     ];
 
-view('admin/create', $data->get_terms());
+view('admin/create', Data::get_terms());
 
 ?>

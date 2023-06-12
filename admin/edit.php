@@ -2,8 +2,6 @@
 session_start();
 require('../app/app.php');
 
-$data = new FileDataProvider(CONFIG['data_file']);
-
 ensure_user_is_authenticated();
 
 $view_bag = [
@@ -19,7 +17,7 @@ if(is_get()){
         die();
     }
 
-    $term = $data->get_term($key);
+    $term = Data::get_term($key);
 
     if($term === false){
         view('not_found','');
@@ -39,7 +37,7 @@ if(is_post()){
     if(empty($new_term) || empty($definition) || empty($original_term) ){
         echo 'Fill all fields';
     } else{
-        $data->update_term($original_term,$new_term, $definition);
+        Data::update_term($original_term,$new_term, $definition);
         redirect('index.php');
     }
 }

@@ -6,4 +6,4 @@
     require('data/filedataprovider.class.php');
     require('data/data.class.php');
 
-    // Data::initialize(new FileDataProvider(CONFIG['data_file']));
+    Data::initialize(new FileDataProvider(CONFIG['data_file']));

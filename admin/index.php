@@ -2,7 +2,7 @@
 session_start();
 require('../app/app.php');
 
-$data = new FileDataProvider(CONFIG['data_file']);
+
 
 ensure_user_is_authenticated();
 
@@ -11,6 +11,6 @@ ensure_user_is_authenticated();
     'heading' => '',
     ];
 
-view('admin/index', $data->get_terms());
+view('admin/index', Data::get_terms());
 
 ?>
