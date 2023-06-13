@@ -10,7 +10,7 @@
     <div class="row">
         <form action="" method="post">
 
-            <input type="hidden" name="term" value='<?= $model -> term ?>' />
+            <input type="hidden" name="id" value='<?= $model -> id ?>' />
             
 
             <div class="form-group">

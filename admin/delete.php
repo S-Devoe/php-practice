@@ -32,13 +32,13 @@ if(is_get()){
 }
 
 if(is_post()){
-    $term = sanitize($_POST['term']);
+    $id = sanitize($_POST['id']);
     
 
-    if(empty($term) ){
+    if(empty($id) ){
         echo 'Fill all fields';
     } else{
-        Data::delete_term($term);
+        Data::delete_term($id);
         redirect('index.php');
     }
 }

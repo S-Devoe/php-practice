@@ -8,7 +8,7 @@
     <div class="row">
         <form action="" method="post">
 
-            <input type="hidden" name="original-term" value='<?= $model -> term ?>' />
+            <input type="hidden" name="id" value='<?= $model -> id ?>' />
             <div class="form-group">
                 <label for="term">Term: </label>
                 <input  type="text" class='form-control' name='term' id='term' value="<?= $model -> term ?>" />

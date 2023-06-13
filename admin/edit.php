@@ -32,12 +32,12 @@ if(is_get()){
 if(is_post()){
     $new_term = sanitize($_POST['term']);
     $definition = sanitize($_POST['definition']);
-    $original_term = sanitize($_POST['original-term']);
+    $id = sanitize($_POST['id']);
 
-    if(empty($new_term) || empty($definition) || empty($original_term) ){
+    if(empty($new_term) || empty($definition) || empty($id) ){
         echo 'Fill all fields';
     } else{
-        Data::update_term($original_term,$new_term, $definition);
+        Data::update_term($id,$new_term, $definition);
         redirect('index.php');
     }
 }
